@@ -1,0 +1,10 @@
+{# app/Resources/views/default/hello.html.twig #}
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Hi {{ name }}! Welcome to Symfony!</h1>
+    <br>
+    <a href="{{ path('homepage') }}">Home</a>
+    <br>
+    <a href="{{ url('hello', {'name':'mani'}) }}">link 2</a>
+{% endblock %}

@@ -14,8 +14,19 @@ class DefaultController extends Controller
     public function indexAction(Request $request)
     {
         // replace this example code with whatever you need
+        $this->addFlash('notice', 'Congratulations, your action succeeded!');
         return $this->render('default/index.html.twig', [
             'base_dir' => realpath($this->getParameter('kernel.root_dir').'/..'),
         ]);
+    }
+
+    /**
+     * @Route("/hello/{name}", name="hello")
+     */
+    public function helloAction($name)
+    {
+        return $this->render('default/hello.html.twig', array(
+            'name' => $name
+        ));
     }
 }
